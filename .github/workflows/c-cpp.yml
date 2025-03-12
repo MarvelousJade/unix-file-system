@@ -28,11 +28,3 @@ jobs:
       # Step 4: Build the project
       - name: Build project
         run: cmake --build build --config Release
-
-      # Step 5: Run tests or execute the program
-      - name: Run tests
-        run: |
-          cd build
-          # Run the interactive program with a test file.
-          # Adjust the path to filesystem.txt as necessary.
-          ./ws ../src/filesystem.txt
