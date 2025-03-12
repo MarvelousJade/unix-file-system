@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <string>
 #include "Filesystem.h"
+#include <limits>
 
 static void printMenu() {
     std::cout << "\nChoose an option:\n"
