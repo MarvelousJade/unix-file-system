@@ -2,20 +2,37 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Install dependencies (CMake, g++)
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake g++
+
+      # Step 3: Configure the project using CMake
+      - name: Configure project
+        run: cmake -S . -B build
+
+      # Step 4: Build the project
+      - name: Build project
+        run: cmake --build build --config Release
+
+      # Step 5: Run tests or execute the program
+      - name: Run tests
+        run: |
+          cd build
+          # Run the interactive program with a test file.
+          # Adjust the path to filesystem.txt as necessary.
+          ./ws ../src/filesystem.txt
