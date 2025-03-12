@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <iomanip>
 #include <stdexcept>
+#include <algorithm>
+
 namespace seneca {
     Directory::Directory(const std::string& name) {
         if (name.empty())
