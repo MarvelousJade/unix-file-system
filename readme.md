@@ -67,16 +67,16 @@ Demonstrates the functional correctness of adding/removing files and directories
 ```bash
 git clone https://github.com/yourusername/unix-file-system.git
 cd unix-file-system
-Create a Build Directory and Run CMake
 ```
+Create a Build Directory and Run CMake
 
 ```bash
 mkdir build
 cd build
 cmake ..
 cmake --build .
-This will compile the project and generate an executable named ws.
 ```
+This will compile the project and generate an executable named ws.
 
 ## Usage
 ### Running the Interactive Program
